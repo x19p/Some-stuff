@@ -1,3 +1,5 @@
+-- no idea how to change the language to lua highlights or whatever :sob:
+
 local TargetName = "Sealy_TheSealedSeal"
 
 
@@ -11,7 +13,7 @@ for i = 1, 30 do
     Root.CFrame = TargetPart.CFrame * CFrame.new(1.8, 0, 0) * CFrame.Angles(0, math.rad(90), 0)
     Root.AssemblyLinearVelocity = Vector3.new(0, 1e9, 0)
 end
-Root.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+Root.AssemblyLinearVelocity = Vector3.zero
 replicatesignal(game:GetService("Players").LocalPlayer.Kill)
 task.wait(2)
 char:FindFirstChildWhichIsA("Humanoid"):SetStateEnabled(15, true)
