@@ -1,0 +1,17 @@
+local TargetName = "Sealy_TheSealedSeal"
+
+
+local char = game:GetService("Players").LocalPlayer.Character
+local Root = char.HumanoidRootPart
+local TargetPart = game:GetService("Players")[TargetName].Character.HumanoidRootPart
+char:FindFirstChildWhichIsA("Humanoid"):SetStateEnabled(15, false)
+for i = 1, 30 do
+    task.wait()
+    sethiddenproperty(Root, "PhysicsRepRootPart", TargetPart)
+    Root.CFrame = TargetPart.CFrame * CFrame.new(1.8, 0, 0) * CFrame.Angles(0, math.rad(90), 0)
+    Root.AssemblyLinearVelocity = Vector3.new(0, 1e9, 0)
+end
+Root.AssemblyLinearVelocity = Vector3.new(0, 0, 0)
+replicatesignal(game:GetService("Players").LocalPlayer.Kill)
+task.wait(2)
+char:FindFirstChildWhichIsA("Humanoid"):SetStateEnabled(15, true)
