@@ -1,5 +1,3 @@
--- no idea how to change the language to lua highlights or whatever :sob:
-
 local TargetName = "Sealy_TheSealedSeal"
 
 
